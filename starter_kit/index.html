@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churn Risk Flagging</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-left"></div>
+  <div class="ambient ambient-right"></div>
+
+  <main class="page-shell">
+    <section class="hero hero-cinematic reveal">
+      <div class="hero-copy-block">
+        <p class="eyebrow">Vantage Retail Systems · Churn Risk Flagging</p>
+        <h1>See churn risk unfold before the renewal call ever happens.</h1>
+        <p class="hero-copy hero-copy-large">
+          A compact dataset can still tell a sharp story. This experience turns eight weekly-login histories into a
+          cinematic decision narrative: who is slipping, why it matters, and where Customer Success should act first.
+        </p>
+        <div class="hero-actions">
+          <a class="hero-link" href="#featured-risk">See the highest-risk account</a>
+          <a class="hero-link hero-link-muted" href="#portfolio-view">Review the full portfolio</a>
+        </div>
+      </div>
+      <aside class="hero-aside hero-stage">
+        <p class="section-label">Decision Policy</p>
+        <ul class="policy-list">
+          <li>Compare the last 4 weeks against the previous 4 weeks.</li>
+          <li>Require sustained weakness, not a one-week dip.</li>
+          <li>Separate MONITOR and INSUFFICIENT_DATA from true outreach flags.</li>
+        </ul>
+        <div class="hero-orbit" id="hero-orbit"></div>
+      </aside>
+      <div class="hero-metrics" id="summary-cards"></div>
+    </section>
+
+    <section class="scroll-story" id="featured-risk">
+      <div class="story-rail">
+        <div class="story-copy reveal">
+          <p class="section-label">Featured Risk Story</p>
+          <h2>The clearest churn signal in the portfolio</h2>
+          <p class="panel-note" id="featured-summary"></p>
+          <div class="story-points" id="story-points"></div>
+        </div>
+        <div class="story-visual panel panel-dark">
+          <div id="featured-stage"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-grid">
+      <article class="panel panel-dark reveal">
+        <div class="panel-header panel-header-stack">
+          <div>
+            <p class="section-label section-label-light">Dataset Story</p>
+            <h2>What the eight accounts reveal</h2>
+          </div>
+        </div>
+        <div class="insight-grid" id="dataset-story"></div>
+      </article>
+
+      <article class="panel panel-accent reveal">
+        <div class="panel-header panel-header-stack">
+          <div>
+            <p class="section-label">How To Read This</p>
+            <h2>From raw logins to outreach decisions</h2>
+          </div>
+        </div>
+        <div class="decision-steps" id="decision-steps"></div>
+      </article>
+    </section>
+
+    <section class="panel panel-highlight panel-wide reveal">
+      <div class="panel-header">
+        <div>
+          <p class="section-label">Executive Summary</p>
+          <h2>Recommended outreach queue</h2>
+        </div>
+        <p class="panel-note" id="summary-note"></p>
+      </div>
+      <div id="flagged-list" class="flagged-list flagged-list-featured"></div>
+    </section>
+
+    <section class="panel reveal" id="portfolio-view">
+      <div class="panel-header">
+        <div>
+          <p class="section-label">Portfolio View</p>
+          <h2>Decision detail for every account</h2>
+        </div>
+      </div>
+      <div class="portfolio-strip" id="portfolio-strip"></div>
+      <div class="portfolio-gallery" id="portfolio-gallery"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>Tier</th>
+              <th>History</th>
+              <th>Recent Avg</th>
+              <th>Prior Avg</th>
+              <th>Trend</th>
+              <th>Risk</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody id="account-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
